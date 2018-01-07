@@ -44,14 +44,4 @@ cd $DOCKER_DIR/kapacitor
 docker build -t kapacitor:cloud .
 
 cd $DOCKER_DIR/telegraf
-if [ ! -d "src/telegraf" ]:
-then
-    cd src
-    git clone https://github.com/influxdata/telegraf.git
-    cd telegraf
-    git checkout release-1.5
-    rm -rf .git
-    cd ..
-    cd ..
-fi
 docker build -t telegraf:cloud .
