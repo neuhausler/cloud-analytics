@@ -1,0 +1,26 @@
+influxdb:
+  image: influxdb:cloud
+  net: "host"
+  restart: always
+  volumes:
+      - /root/cloud-data/influxdb:/var/lib/influxdb
+telegraf:
+  image: telegraf:cloud
+  net: "host"
+  restart: always
+  pid: "host"
+  volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+kapacitor:
+  image: kapacitor:cloud
+  net: "host"
+  restart: always
+  volumes:
+    - /root/cloud-data/kapacitor:/var/lib/kapacitor
+grafana:
+  image: grafana:cloud
+  net: "host"
+  restart: always
+  volumes:
+    - /root/cloud-data/grafana:/var/lib/grafana
+
