@@ -49,7 +49,7 @@ then
     cd src
     git clone https://github.com/influxdata/telegraf.git
     cd telegraf
-    git checkout release-1.3
+    git checkout release-1.5
     rm -rf .git
     cd ..
     cd ..
